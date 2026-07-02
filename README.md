@@ -1,39 +1,54 @@
-### Documentation is included in the Documentation folder ###
+# UiPath Employee Onboarding REFramework Project
 
+This project is a UiPath REFramework-based automation created for UiPath certification preparation.
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
+## Project Overview
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+The automation processes employee onboarding records using Orchestrator queues.
 
+## Process Flow
 
-### How It Works ###
+1. Dispatcher reads employee data from Excel.
+2. Dispatcher adds employee records to Orchestrator Queue.
+3. Performer gets queue items one by one.
+4. Performer validates employee details.
+5. Valid records generate onboarding checklist files.
+6. Invalid records are marked as Business Exceptions.
+7. Unexpected failures are handled as System Exceptions.
 
-1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+## Technologies Used
 
-2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+- UiPath Studio
+- REFramework
+- UiPath Orchestrator Queues
+- Excel Activities
+- File System Activities
+- Exception Handling
+- Config.xlsx
 
-3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+## Queue Name
 
-4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
+Employee_Onboarding_Queue
 
+## REFramework Components Used
 
-### For New Project ###
+- Init
+- Get Transaction Data
+- Process Transaction
+- Set Transaction Status
+- End Process
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+## Business Rules
+
+A transaction is marked as Business Exception if:
+
+- Employee ID is missing
+- First Name is missing
+- Email address is invalid
+
+## Output
+
+For each valid employee, the bot creates:
+
+```text
+Output\EMP001_Rahul_Sharma\Onboarding_Checklist.txt
