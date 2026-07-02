@@ -1,0 +1,17 @@
+Employee Onboarding Checklist
+--------------------------------
+Employee ID: EMP004
+Name: Priya Singh
+Email: priya.singh@test.com
+Department: Admin
+Joining Date: 7/20/2026
+Laptop Required: Yes
+Manager Email: manager4@test.com
+
+Checklist:
+1. Create employee system account
+2. Assign department access
+3. Prepare ID card
+4. Schedule orientation session
+5. Share joining documents
+6. Arrange laptop and accessories

@@ -1,0 +1,32 @@
+﻿# UiPath generated/local files
+.local/
+.settings/
+bin/
+obj/
+.project/
+.screenshots/
+
+# Packages and build output
+*.nupkg
+project.lock.json
+
+# Logs
+*.log
+Logs/
+ExecutionLogs/
+
+# Output/Input test data
+Output/
+Downloads/
+Temp/
+*.tmp
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# Sensitive files
+*.credential
+*.pfx
+*.key
+.env

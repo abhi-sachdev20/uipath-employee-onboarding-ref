@@ -1,0 +1,6 @@
+{
+  "Name": "Employee_Onboarding_Performer_REF",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework",
+  "MainFile": "Main.xaml"
+}

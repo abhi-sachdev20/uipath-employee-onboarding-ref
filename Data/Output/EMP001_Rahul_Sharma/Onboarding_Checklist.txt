@@ -1,0 +1,17 @@
+Employee Onboarding Checklist
+--------------------------------
+Employee ID: EMP001
+Name: Rahul Sharma
+Email: rahul.sharma@test.com
+Department: Finance
+Joining Date: 7/10/2026
+Laptop Required: Yes
+Manager Email: manager1@test.com
+
+Checklist:
+1. Create employee system account
+2. Assign department access
+3. Prepare ID card
+4. Schedule orientation session
+5. Share joining documents
+6. Arrange laptop and accessories
